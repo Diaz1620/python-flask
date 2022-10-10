@@ -1,18 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template("index.html")
 
 @app.route('/success')
 def success():
     return 'Success'
 
-@app.route('/hello/<name>')
-def greeting(name):
-    return f"Hello {name}"
+@app.route('/hello/<name>/<int:num>')
+def greeting(name, num):
+    return render_template("hello.html", nombre= name, numero= num)
 
 @app.route('/salutations/<name>/<int:num>')
 def salutations(name, num):
