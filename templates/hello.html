@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Greetings</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
     <p>{{ numero }}</p>
 
     {% for i in range(0,numero) %}
-        <h3>Hola jovencito {{ nombre }}</h3>
+        <p>Hola jovencito {{ nombre }}</p>
     {% endfor %}
 
 
